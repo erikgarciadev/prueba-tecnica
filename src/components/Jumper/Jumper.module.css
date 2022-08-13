@@ -1,0 +1,27 @@
+.jumper {
+    background-color: #383b4f;
+    position: fixed;
+    bottom: 6.5em;
+    right: 1.5em;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    z-index: 100;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px -6px rgba(66,63,66,0.81);
+    display: none;
+}
+
+.jumper div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.jumper.show {
+    display: flex;
+}
+

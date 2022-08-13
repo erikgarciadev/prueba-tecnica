@@ -5,7 +5,7 @@ import WrapperGrid from "../../components/WrapperGrid";
 
 export default function Pokemons() {
   return (
-    <Wrapper status={"LOADING"}>
+    <Wrapper status={"SUCCESS"}>
       <WrapperGrid>
         <Card>Name</Card>
         <Card>Name</Card>
@@ -38,6 +38,111 @@ export default function Pokemons() {
 
         <Card>Name</Card>
 
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
+        <Card>Name</Card>
         <Card>Name</Card>
         <Card>Name</Card>
         <Card>Name</Card>
