@@ -4,24 +4,13 @@ import Input from "../../components/Input";
 import Wrapper from "../../components/Wrapper";
 import WrapperGrid from "../../components/WrapperGrid";
 import clientAxios from "../../config/clientAxios";
+import { IStatus, ListResponse } from "../../interfaces/utils";
 import filterList from "../../utils/filterList";
 
 export default function Locations() {
-  const [locations, setLocations] = useState<
-    {
-      url: string;
-      name: string;
-    }[]
-  >([]);
-  const [initialLocations, setInitialLocations] = useState<
-    {
-      url: string;
-      name: string;
-    }[]
-  >([]);
-  const [status, setStatus] = useState<"LOADING" | "SUCCESS" | "ERROR">(
-    "LOADING"
-  );
+  const [locations, setLocations] = useState<ListResponse[]>([]);
+  const [initialLocations, setInitialLocations] = useState<ListResponse[]>([]);
+  const [status, setStatus] = useState<IStatus>("LOADING");
   useEffect(() => {
     const getLocations = async () => {
       try {

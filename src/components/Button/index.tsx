@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
+import React, {  ReactNode } from 'react'
 import styles from './Button.module.css'
 
 export default function Button({

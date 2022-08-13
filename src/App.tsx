@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Jumper from "./components/Jumper";
 import Items from "./features/items";
 import Locations from "./features/locations";
 import Pokemon from "./features/pokemon";

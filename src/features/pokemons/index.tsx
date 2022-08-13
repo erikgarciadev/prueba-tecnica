@@ -6,25 +6,14 @@ import Input from "../../components/Input";
 import Wrapper from "../../components/Wrapper";
 import WrapperGrid from "../../components/WrapperGrid";
 import clientAxios from "../../config/clientAxios";
+import { IStatus, ListResponse } from "../../interfaces/utils";
 import filterList from "../../utils/filterList";
 
 export default function Pokemons() {
   const navigate = useNavigate();
-  const [initialPokemons, setInitialPokemons] = useState<
-    {
-      url: string;
-      name: string;
-    }[]
-  >([]);
-  const [pokemons, setPokemons] = useState<
-    {
-      url: string;
-      name: string;
-    }[]
-  >([]);
-  const [status, setStatus] = useState<"LOADING" | "SUCCESS" | "ERROR">(
-    "LOADING"
-  );
+  const [initialPokemons, setInitialPokemons] = useState<ListResponse[]>([]);
+  const [pokemons, setPokemons] = useState<ListResponse[]>([]);
+  const [status, setStatus] = useState<IStatus>("LOADING");
   useEffect(() => {
     const getPokemons = async () => {
       try {
@@ -48,7 +37,7 @@ export default function Pokemons() {
   return (
     <Wrapper status={status}>
       <div className="wrapper_title_search">
-        <p>Pokemon</p>
+        <p>Pokemons</p>
         <Input placeholder="Search location" onChange={handleChange} />
       </div>
       {pokemons.length === 0 && <p className="no_results">No results</p>}

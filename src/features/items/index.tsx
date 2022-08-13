@@ -4,24 +4,13 @@ import Input from "../../components/Input";
 import Wrapper from "../../components/Wrapper";
 import WrapperGrid from "../../components/WrapperGrid";
 import clientAxios from "../../config/clientAxios";
+import { IStatus, ListResponse } from "../../interfaces/utils";
 import filterList from "../../utils/filterList";
 
 export default function Items() {
-  const [initialItems, setInitialItems] = useState<
-    {
-      url: string;
-      name: string;
-    }[]
-  >([]);
-  const [items, setItems] = useState<
-    {
-      url: string;
-      name: string;
-    }[]
-  >([]);
-  const [status, setStatus] = useState<"LOADING" | "SUCCESS" | "ERROR">(
-    "LOADING"
-  );
+  const [initialItems, setInitialItems] = useState<ListResponse[]>([]);
+  const [items, setItems] = useState<ListResponse[]>([]);
+  const [status, setStatus] = useState<IStatus>("LOADING");
   useEffect(() => {
     const getItems = async () => {
       try {
