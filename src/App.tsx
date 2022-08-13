@@ -1,10 +1,25 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Items from "./features/items";
+import Locations from "./features/locations";
+import Pokemon from "./features/pokemon";
+import Pokemons from "./features/pokemons";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello world</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Pokemons />} />
+          <Route path="/pokemon/:id" element={<Pokemon />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/items" element={<Items />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

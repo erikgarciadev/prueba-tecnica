@@ -2,9 +2,23 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.container {
+  height: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
