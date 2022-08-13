@@ -1,35 +1,39 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Card from "../../components/Card";
 import Input from "../../components/Input";
 import Wrapper from "../../components/Wrapper";
 import WrapperGrid from "../../components/WrapperGrid";
 import clientAxios from "../../config/clientAxios";
-import { IStatus, ListResponse } from "../../interfaces/utils";
 import filterList from "../../utils/filterList";
+import { setInitialItems, setItems, setStatus } from "./itemsSlice";
 
 export default function Items() {
-  const [initialItems, setInitialItems] = useState<ListResponse[]>([]);
-  const [items, setItems] = useState<ListResponse[]>([]);
-  const [status, setStatus] = useState<IStatus>("LOADING");
+  const dispatch = useAppDispatch();
   useEffect(() => {
     const getItems = async () => {
       try {
-        setStatus("LOADING");
+        dispatch(setStatus("LOADING"));
         const data = await clientAxios.get("item?limit=100000&offset=0");
-        setItems(data.data.results);
-        setInitialItems(data.data.results);
-        setStatus("SUCCESS");
+        dispatch(setItems(data.data.results));
+        dispatch(setInitialItems(data.data.results));
+        dispatch(setStatus("SUCCESS"));
       } catch (error) {
-        setStatus("ERROR");
+        dispatch(setStatus("ERROR"));
       }
     };
 
     getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const status = useAppSelector((state) => state.items.status);
+  const items = useAppSelector((state) => state.items.items);
+  const initialItems = useAppSelector((state) => state.items.initialItems);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim();
-    setItems(filterList(initialItems, value));
+    dispatch(setItems(filterList(initialItems, value)));
   };
 
   return (

@@ -1,38 +1,44 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Input from "../../components/Input";
 import Wrapper from "../../components/Wrapper";
 import WrapperGrid from "../../components/WrapperGrid";
 import clientAxios from "../../config/clientAxios";
-import { IStatus, ListResponse } from "../../interfaces/utils";
 import filterList from "../../utils/filterList";
+import { setInitialPokemons, setPokemons, setStatus } from "./pokemonSlice";
 
 export default function Pokemons() {
   const navigate = useNavigate();
-  const [initialPokemons, setInitialPokemons] = useState<ListResponse[]>([]);
-  const [pokemons, setPokemons] = useState<ListResponse[]>([]);
-  const [status, setStatus] = useState<IStatus>("LOADING");
+  const dispatch = useAppDispatch();
   useEffect(() => {
     const getPokemons = async () => {
       try {
-        setStatus("LOADING");
+        dispatch(setStatus("LOADING"));
         const data = await clientAxios.get("pokemon?limit=100000&offset=0");
-        setPokemons(data.data.results);
-        setInitialPokemons(data.data.results);
-        setStatus("SUCCESS");
+        dispatch(setPokemons(data.data.results));
+        dispatch(setInitialPokemons(data.data.results));
+        dispatch(setStatus("SUCCESS"));
       } catch (error) {
-        setStatus("ERROR");
+        dispatch(setStatus("ERROR"));
       }
     };
 
     getPokemons();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const pokemons = useAppSelector((state) => state.pokemons.pokemons);
+  const initialPokemons = useAppSelector(
+    (state) => state.pokemons.initialPokemons
+  );
+  const status = useAppSelector((state) => state.pokemons.status);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim();
-    setPokemons(filterList(initialPokemons, value));
+    dispatch(setPokemons(filterList(initialPokemons, value)));
   };
   return (
     <Wrapper status={status}>

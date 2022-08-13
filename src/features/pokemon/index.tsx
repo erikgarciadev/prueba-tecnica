@@ -30,7 +30,6 @@ export default function Pokemon() {
     getPokemon();
   }, [name]);
 
-  console.log(pokemon);
   return (
     <Wrapper status={status}>
       <Button
@@ -55,7 +54,7 @@ export default function Pokemon() {
           </div>
           <div className={styles.wrapperType}>
             {pokemon?.types.map((data, i) => (
-              <Badge backgroundColor={POKEMON_TYPE_COLORS[data.type.name!]}>
+              <Badge key={i} backgroundColor={POKEMON_TYPE_COLORS[data.type.name!]}>
                 {data.type.name}
               </Badge>
             ))}
