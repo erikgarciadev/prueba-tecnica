@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { STATUS } from "../../config/constants";
 import Error from "../Error";
 import Loader from "../Loader";
 import styles from "./Wrapper.module.css";
@@ -10,14 +11,14 @@ export default function Wrapper({
   children: ReactNode | ReactNode[];
   status: "SUCCESS" | "ERROR" | "LOADING";
 }) {
-  if (status === "ERROR") {
+  if (status === STATUS.ERROR) {
     return (
       <div className={styles.wrapperFlex}>
         <Error />
       </div>
     );
   }
-  if (status === "LOADING") {
+  if (status === STATUS.LOADING) {
     return (
       <div className={styles.wrapperFlex}>
         <Loader />
