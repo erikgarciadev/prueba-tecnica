@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Pokemons />} />
-          <Route path="/pokemon/:id" element={<Pokemon />} />
+          <Route path="/pokemon/:name" element={<Pokemon />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/items" element={<Items />} />
           <Route path="*" element={<Navigate to="/" />} />

@@ -22,7 +22,24 @@ a{
   cursor: pointer;
 }
 
-/* .show {
+p {
+  margin:  0;
+}
+
+.wrapper_title_search {
   display: flex;
-} */
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.wrapper_title_search p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.no_results {
+  font-size: 20px;
+  font-weight: 500;
+}
 
